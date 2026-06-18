@@ -214,8 +214,37 @@
 
 
 <script>
-// 1. Math Engine (SunCalc Library)
-!function(){"use strict";var a=Math.PI,b=Math.sin,c=Math.cos,d=Math.tan,e=Math.asin,f=Math.atan2,g=Math.acos,h=1e3*60*60*24,i=365.25,j=2440588,k=23.4397*a/180,l=a/180;function m(a){return a/h+j-.5}function n(a){return(a-j+.5)*h}function o(b){return(b-2451545)/36525}function p(a){return l*(280.4664567+36000.76982956*a+30329056e-11*a*a+o(a)*o(a)/49931222e3)}function q(a){return l*(357.52911+35999.05029*a-.0001537*a*a)}function r(a){return l*(1.914602-4817e-6*a-14e-6*a*a)*b(q(a))+l*(.019993-.000101*a)*b(2*q(a))+l*.000289*b(3*q(a))}function s(a){return p(a)+r(a)}function t(a){var c=s(a),e=k;return{dec:e(b(e)*b(c)),ra:f(b(c)*c(e),c(c))}}var u={};u.getPosition=function(a,h,i){var j=l*-i,k=l*h,m=t(o(a)),n=p(o(a))+j-m.ra,q=e(b(k)*b(m.dec)+c(k)*c(m.dec)*c(n)),r=f(b(n),c(n)*b(k)-d(m.dec)*c(k));return{azimuth:r,altitude:q}};window.SunCalc=u}();
+// 1. Clean Math Engine (No scrambled letters)
+const SunCalc = {
+    getPosition: function(date, lat, lng) {
+        const lw = -lng * (Math.PI / 180);
+        const phi = lat * (Math.PI / 180);
+        
+        // Calculate days since J2000.0
+        const d = (date.getTime() / 86400000) + 2440588.5 - 2451545.0;
+        
+        // Solar coordinates
+        const M = (357.5291 + 0.98560028 * d) * (Math.PI / 180);
+        const L = (280.4665 + 0.98564736 * d) * (Math.PI / 180) + (1.9146 * Math.sin(M) + 0.02 * Math.sin(2 * M)) * (Math.PI / 180);
+        
+        // Declination and Right Ascension
+        const dec = Math.asin(Math.sin(L) * Math.sin(23.4397 * (Math.PI / 180)));
+        const ra = Math.atan2(Math.sin(L) * Math.cos(23.4397 * (Math.PI / 180)), Math.cos(L));
+        
+        // Sidereal time
+        const sidereal = (280.46061837 + 360.98564736629 * d) * (Math.PI / 180) + lw;
+        const H = sidereal - ra;
+        
+        // Altitude (Elevation) and Azimuth
+        const altitude = Math.asin(Math.sin(phi) * Math.sin(dec) + Math.cos(phi) * Math.cos(dec) * Math.cos(H));
+        const azimuth = Math.atan2(Math.sin(H), Math.cos(H) * Math.sin(phi) - Math.tan(dec) * Math.cos(phi));
+        
+        return {
+            altitude: altitude,
+            azimuth: azimuth
+        };
+    }
+};
 
 // 2. Controller Action
 function findTheSun() {
@@ -233,10 +262,13 @@ function findTheSun() {
 
     try {
         const sunData = SunCalc.getPosition(now, lat, lon);
+        
+        // Convert answers from radians to degrees
         const heightAngle = sunData.altitude * (180 / Math.PI);
         let directionAngle = (sunData.azimuth * (180 / Math.PI)) + 180;
         directionAngle = (directionAngle + 180) % 360; 
 
+        // Update the text on your screen
         const timeBox = document.getElementById('sun-time') || document.getElementById('out-time');
         const heightBox = document.getElementById('sun-height') || document.getElementById('out-elev');
         const directionBox = document.getElementById('sun-direction') || document.getElementById('out-azi');
