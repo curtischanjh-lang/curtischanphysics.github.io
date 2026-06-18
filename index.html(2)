@@ -1,0 +1,33 @@
+import datetime
+import pandas as pd
+import pvlib
+from pvlib.location import Location
+
+
+def track_sun(latitude: float, longitude: float, timezone: str) -> dict:
+    location = Location(latitude, longitude, tz=timezone)
+    current_time = pd.Timestamp(datetime.datetime.now(), tz=timezone)
+    solar_position = location.get_solarposition(current_time)
+
+    return {
+        "timestamp": current_time.strftime("%Y-%m-%d %H:%M:%S %Z"),
+        "solar_elevation_deg": round(solar_position["apparent_elevation"].iloc[0], 2),
+        "solar_azimuth_deg": round(solar_position["azimuth"].iloc[0], 2),
+    }
+
+
+if __name__ == "__main__":
+    print("--- Solar Tracker Setup ---")
+    
+    # Take text and number inputs from the terminal
+    lat = float(input("Enter Latitude (e.g., 40.7128): "))
+    lon = float(input("Enter Longitude (e.g., -74.0060): "))
+    tz = input("Enter Timezone (e.g., America/New_York, Europe/London): ")
+
+    try:
+        sun_data = track_sun(lat, lon, tz)
+        print(f"\nTime: {sun_data['timestamp']}")
+        print(f"Sun Elevation: {sun_data['solar_elevation_deg']}°")
+        print(f"Sun Azimuth: {sun_data['solar_azimuth_deg']}°")
+    except Exception as e:
+        print(f"Error: Please check your input values. Details: {e}")
