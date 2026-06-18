@@ -211,6 +211,49 @@
     <footer>
         &copy; 2026 Curtis Chan Holdings. All Rights Reserved. Protected by Cryptographic Non-Orientable Topological Systems.
     </footer>
+<script src="https://cloudflare.com"></script>
+
+<script>
+function calculateSolarCoordinates() {
+    // 1. Extract values typed into the UI inputs
+    const latInput = document.getElementById('solar-lat').value;
+    const lonInput = document.getElementById('solar-lon').value;
+
+    if (!latInput || !lonInput) {
+        alert("Please provide valid coordinates to calculate tracking metrics.");
+        return;
+    }
+
+    const latitude = parseFloat(latInput);
+    const longitude = parseFloat(lonInput);
+    const now = new Date();
+
+    try {
+        // 2. Compute celestial tracking data using SunCalc engine
+        // SunCalc processes variables internally using radians
+        const sunPosition = SunCalc.getPosition(now, latitude, longitude);
+
+        // 3. Convert raw tracking metrics into architectural degrees
+        // Solar elevation conversion
+        const elevationDegrees = sunPosition.altitude * (180 / Math.PI);
+        
+        // Convert azimuth from math orientation (South-zero) to standard Navigation Compass (North 0° / 360°)
+        let azimuthDegrees = (sunPosition.azimuth * (180 / Math.PI)) + 180;
+        azimuthDegrees = (azimuthDegrees + 180) % 360; 
+
+        // 4. Update interface values
+        document.getElementById('out-time').innerText = now.toLocaleTimeString();
+        document.getElementById('out-elev').innerText = elevationDegrees.toFixed(2);
+        document.getElementById('out-azi').innerText = azimuthDegrees.toFixed(2);
+
+        // Make the results visualization block visible
+        document.getElementById('solar-output-panel').style.display = 'block';
+
+    } catch (error) {
+        alert("Error mapping coordinates: " + error.message);
+    }
+}
+</script>
 
 </body>
-</html>
+
