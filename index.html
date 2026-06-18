@@ -1,17 +1,190 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Courier; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curtis Chan | Fine Art & Space Analytics</title>
+    <style>
+        :root {
+            --bg-deep: #0a0c10;
+            --panel-dark: #12161f;
+            --accent-glow: #00ffcc;
+            --text-main: #f0f3f8;
+            --text-dim: #8b9bb4;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--panel-dark);
+            border-bottom: 1px solid #1f293d;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+        header p {
+            color: var(--accent-glow);
+            margin: 0.5rem 0 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+        .bio-section {
+            background: linear-gradient(135deg, #12161f, #0d1117);
+            border: 1px solid #1f293d;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .bio-section h2 {
+            color: var(--accent-glow);
+            margin-top: 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        .card {
+            background-color: var(--panel-dark);
+            border: 1px solid #1f293d;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-glow);
+            box-shadow: 0 5px 20px rgba(0, 255, 204, 0.2);
+        }
+        .card-img-placeholder {
+            background: linear-gradient(45deg, #1f2430, #2d3446);
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #1f293d;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .card-title {
+            font-size: 1.3rem;
+            margin: 0 0 0.5rem;
+            color: #fff;
+        }
+        .card-tag {
+            display: inline-block;
+            background: rgba(0, 255, 204, 0.1);
+            color: var(--accent-glow);
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .card-desc {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            height: 70px;
+            overflow: hidden;
+        }
+        .btn-buy {
+            display: block;
+            background-color: var(--accent-glow);
+            color: #000;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.2s ease;
+        }
+        .btn-buy:hover {
+            background-color: #00cca3;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            border-top: 1px solid #1f293d;
+            margin-top: 4rem;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;title&gt;Curtis Chan | Fine Art &amp; Space Analytics&lt;/title&gt; &lt;style&gt; :root { --bg-deep: #0a0c10; --panel-dark: #12161f; --accent-glow: #00ffcc; --text-main: #f0f3f8; --text-dim: #8b9bb4; } body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--bg-deep); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; } header { background-color: var(--panel-dark); border-bottom: 1px solid #1f293d; padding: 2rem 5%; text-align: center; } header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; color: #fff; } header p { color: var(--accent-glow); margin: 0.5rem 0 0; font-weight: 600; letter-spacing: 1px; } .container { max-width: 1200px; margin: 0 auto; padding: 3rem 5%; } .bio-section { background: linear-gradient(135deg, #12161f, #0d1117); border: 1px solid #1f293d; border-radius: 12px; padding: 2.5rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); } .bio-section h2 { color: var(--accent-glow); margin-top: 0; } .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; } .card { background-color: var(--panel-dark); border: 1px solid #1f293d; border-radius: 10px; overflow: hidden; transition: all 0.3s ease; } .card:hover { transform: translateY(-5px); border-color: var(--accent-glow); box-shadow: 0 5px 20px rgba(0, 255, 204, 0.2); } .card-img-placeholder { background: linear-gradient(45deg, #1f2430, #2d3446); height: 240px; display: flex; align-items: center; justify-content: center; color: var(--text-dim); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #1f293d; } .card-content { padding: 1.5rem; } .card-title { font-size: 1.3rem; margin: 0 0 0.5rem; color: #fff; } .card-tag { display: inline-block; background: rgba(0, 255, 204, 0.1); color: var(--accent-glow); padding: 0.2rem 0.6rem; font-size: 0.75rem; border-radius: 4px; margin-bottom: 1rem; font-weight: 600; } .card-desc { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem; height: 70px; overflow: hidden; } .btn-buy { display: block; background-color: var(--accent-glow); color: #000; text-align: center; padding: 0.8rem; border-radius: 6px; text-decoration: none; font-weight: 700; transition: background 0.2s ease; } .btn-buy:hover { background-color: #00cca3; } footer { text-align: center; padding: 3rem; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid #1f293d; margin-top: 4rem; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;header&gt; &lt;h1&gt;CURTIS CHAN&lt;/h1&gt; &lt;p&gt;FINE ART CELESTIAL IMAGING &amp; QUANTUM SYSTEM ARCHITECTURE&lt;/p&gt; &lt;/header&gt; &lt;div class="container"&gt; &lt;!-- Professional Bio Block --&gt; &lt;section class="bio-section"&gt; &lt;h2&gt;Executive Profile&lt;/h2&gt; &lt;p&gt;Based in Hong Kong, Curtis Chan is an independent visual artist and cosmological researcher exploring the intersections of 11-dimensional M-theory manifold topologies, coordinate tensor transformation matrices, and high-exposure tracking photography. Operating under a strict 70/30 wealth-preservation configuration, fine-art licensing revenues directly capitalize private computational research frameworks.&lt;/p&gt; &lt;/section&gt; &lt;!-- Dynamic Store Grid --&gt; &lt;h2 style="margin-bottom: 2rem; border-left: 4px solid var(--accent-glow); padding-left: 10px;"&gt;Collector Series Storefront&lt;/h2&gt; &lt;div class="grid"&gt; &lt;!-- Item 1 --&gt; &lt;div class="card"&gt; &lt;div class="card-img-placeholder"&gt;🌌 [ Cosmic Overlook Image Space ]&lt;/div&gt; &lt;div class="card-content"&gt; &lt;span class="card-tag"&gt;ASTROPHOTOGRAPHY&lt;/span&gt; &lt;h3 class="card-title"&gt;The Galactic Horizon&lt;/h3&gt; &lt;p class="card-desc"&gt;The Milky Way core captured via precise long-exposure tracking from the cliffs of Cape D'Aguilar, Hong Kong.&lt;/p&gt; &lt;a href="#" class="btn-buy" onclick="alert('Redirecting to secure licensing terminal...')"&gt;Acquire Digital License&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;!-- Item 2 --&gt; &lt;div class="card"&gt; &lt;div class="card-img-placeholder"&gt;☀️ [ Solar Transit Image Space ]&lt;/div&gt; &lt;div class="card-content"&gt; &lt;span class="card-tag"&gt;SOLAR CHROMOSPHERE&lt;/span&gt; &lt;h3 class="card-title"&gt;Solar Transit Sequence&lt;/h3&gt; &lt;p class="card-desc"&gt;Commercial airliner captured in perfect silhouette transit against solar granulation and active plasma flares.&lt;/p&gt; &lt;a href="#" class="btn-buy" onclick="alert('Redirecting to secure licensing terminal...')"&gt;Acquire Digital License&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;!-- Item 3 --&gt; &lt;div class="card"&gt; &lt;div class="card-img-placeholder"&gt;🏙️ [ Lunar Matrix Image Space ]&lt;/div&gt; &lt;div class="card-content"&gt; &lt;span class="card-tag"&gt;COMPRESSION LANDSCAPE&lt;/span&gt; &lt;h3 class="card-title"&gt;Lunar Matrix&lt;/h3&gt; &lt;p class="card-desc"&gt;Massive crimson supermoon compressed via focal telephoto optics behind the high-density grid of Hong Kong.&lt;/p&gt; &lt;a href="#" class="btn-buy" onclick="alert('Redirecting to secure licensing terminal...')"&gt;Acquire Digital License&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;footer&gt; &amp;copy; 2026 Curtis Chan Holdings. All Rights Reserved. Protected by Crypotographic Non-Orientable Topological Systems. &lt;/footer&gt; &lt;/body&gt;</span></p>
+
+    <header>
+        <h1>CURTIS CHAN</h1>
+        <p>FINE ART CELESTIAL IMAGING & QUANTUM SYSTEM ARCHITECTURE</p>
+    </header>
+
+    <div class="container">
+        <section class="bio-section">
+            <h2>Executive Profile</h2>
+            <p>Based in Hong Kong, Curtis Chan is an independent visual artist and cosmological researcher exploring the intersections of 11-dimensional M-theory manifold topologies, coordinate tensor transformation matrices, and high-exposure tracking photography. Operating under a strict 70/30 wealth-preservation configuration, fine-art licensing revenues directly capitalize private computational research frameworks.</p>
+        </section>
+
+        <h2 style="margin-bottom: 2rem; border-left: 4px solid var(--accent-glow); padding-left: 10px;">Collector Series Storefront</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <div class="card-img-placeholder">🌌 [ Cosmic Overlook Image Space ]</div>
+                <div class="card-content">
+                    <span class="card-tag">ASTROPHOTOGRAPHY</span>
+                    <h3 class="card-title">The Galactic Horizon</h3>
+                    <p class="card-desc">The Milky Way core captured via precise long-exposure tracking from the cliffs of Cape D'Aguilar, Hong Kong.</p>
+                    <a href="#" class="btn-buy" onclick="alert('Redirecting to secure licensing terminal...')">Acquire Digital License</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">☀️ [ Solar Transit Image Space ]</div>
+                <div class="card-content">
+                    <span class="card-tag">SOLAR CHROMOSPHERE</span>
+                    <h3 class="card-title">Solar Transit Sequence</h3>
+                    <p class="card-desc">Commercial airliner captured in perfect silhouette transit against solar granulation and active plasma flares.</p>
+                    <a href="#" class="btn-buy" onclick="alert('Redirecting to secure licensing terminal...')">Acquire Digital License</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">🏙️ [ Lunar Matrix Image Space ]</div>
+                <div class="card-content">
+                    <span class="card-tag">COMPRESSION LANDSCAPE</span>
+                    <h3 class="card-title">Lunar Matrix</h3>
+                    <p class="card-desc">Massive crimson supermoon compressed via focal telephoto optics behind the high-density grid of Hong Kong.</p>
+                    <a href="#" class="btn-buy" onclick="alert('Redirecting to secure licensing terminal...')">Acquire Digital License</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Curtis Chan Holdings. All Rights Reserved. Protected by Cryptographic Non-Orientable Topological Systems.
+    </footer>
+
 </body>
 </html>
