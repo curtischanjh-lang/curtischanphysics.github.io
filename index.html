@@ -160,7 +160,33 @@
             </div>
 
             <div class="card">
-                <div class="card-img-placeholder">☀️ [ Solar Transit Image Space ]</div>
+                <div class="card-img-placeholder">☀️ [ Solar Transit Image Space ]<div class="card solar-transit-card" style="border: 1px solid #00ffcc; padding: 24px; border-radius: 8px; background-color: #0d1117;">
+    <h3 style="color: #00ffcc; font-family: monospace; letter-spacing: 1px; margin-bottom: 16px;">
+        ☀️ SOLAR TRANSIT IMAGE SPACE
+    </h3>
+    
+    <!-- Coordinate Entry Fields -->
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
+        <input type="number" id="solar-lat" placeholder="Latitude (e.g. 22.3193)" step="any" 
+               style="background: #161b22; color: #fff; border: 1px solid #30363d; padding: 10px; border-radius: 4px; font-family: monospace;">
+        <input type="number" id="solar-lon" placeholder="Longitude (e.g. 114.1694)" step="any" 
+               style="background: #161b22; color: #fff; border: 1px solid #30363d; padding: 10px; border-radius: 4px; font-family: monospace;">
+    </div>
+    
+    <!-- Action Trigger -->
+    <button onclick="calculateSolarCoordinates()" 
+            style="background: #00ffcc; color: #000; border: none; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; font-family: monospace; text-transform: uppercase;">
+        Compute Coordinates
+    </button>
+
+    <!-- Celestial Position Output Panel -->
+    <div id="solar-output-panel" style="display: none; margin-top: 20px; border-top: 1px dashed #30363d; padding-top: 16px; font-family: monospace;">
+        <p style="color: #8b949e; margin: 4px 0;">TIMESTAMP: <span id="out-time" style="color: #fff;"></span></p>
+        <p style="color: #8b949e; margin: 4px 0;">ELEVATION: <span id="out-elev" style="color: #00ffcc;"></span>°</p>
+        <p style="color: #8b949e; margin: 4px 0;">AZIMUTH: <span id="out-azi" style="color: #00ffcc;"></span>°</p>
+    </div>
+</div>
+            </div>
                 <div class="card-content">
                     <span class="card-tag">SOLAR CHROMOSPHERE</span>
                     <h3 class="card-title">Solar Transit Sequence</h3>
